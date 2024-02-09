@@ -1,2 +1,2 @@
 #!/bin/bash
-dir /b /a-d
+ls -1
