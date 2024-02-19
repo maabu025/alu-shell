@@ -4,7 +4,7 @@ FILE="school"
 
 # Check if the file exists
 if [ -e "$FILE" ]; then
-    echo "school file exists"
+    echo "school file exists but empty"
 
     # Check if the file is empty
     if [ -s "$FILE" ]; then
@@ -19,4 +19,4 @@ if [ -e "$FILE" ]; then
     fi
 else
     echo "school file does not exist"
-fi
+   fi
