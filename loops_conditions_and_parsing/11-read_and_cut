@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Bash script that displays the content of the file /etc/passwd
+# Path to the passwd file
+FILE="/etc/passwd"
+
+# Check if the file exists
+if [ -e "$FILE" ]; then
+    # Use while loop to read lines from the file
+    while IFS=: read -r username _ userid _ _ homedir _; do
+        # Display username, user id, and home directory path
+        echo "Username: $username"
+        echo "User ID: $userid"
+        echo "Home Directory: $homedir"
+        echo "-----------------------------------"
+    done < "$FILE"
+else
+    echo "Error: $FILE does not exist."
+fi
