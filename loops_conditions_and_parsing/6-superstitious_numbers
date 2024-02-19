@@ -1,26 +1,18 @@
 #!/usr/bin/env bash
-#Loops from 1 to 20 and displays:
+#Loops from 1 to 20 and displaced:
 #  "bad luck from China" for the 4th loop iteration
 #  "bad luck from Japan" for the 9th loop iteration
 #  "bad luck from Italy" for the 17th loop iteration
 
-counter=1
 
-while [ $counter -le 20 ]; do
-    case $counter in
-        4)
-            echo "$counter and then bad luck from China"
-            ;;
-        9)
-            echo "$counter and then bad luck from Japan"
-            ;;
-        17)
-            echo "$counter and then bad luck from Italy"
-            ;;
-        *)
-            echo $counter
-            ;;
-    esac
-
-    ((counter++))
+i=1
+while [[ $i -le 10 ]]; do
+    if [ $i -eq 4 ]; then
+	echo "bad luck"
+    elif [ $i -eq 8 ]; then
+	echo "good luck"
+    else
+	echo "Holberton School"
+    fi
+    let i+=1
 done
