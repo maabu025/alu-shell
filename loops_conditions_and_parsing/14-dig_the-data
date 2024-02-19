@@ -1,11 +1,7 @@
 #!/usr/bin/env bash
-# Path to the log file
-LOG_FILE="/path/to/your/access.log"
+# Parses Apache log files in list format.
+#   Groups visitors by IP and HTTP status code.
+#   Displays the number of occurrences, IP, and HTTP status
+#+  code of each log, in sorted order.
 
-# Check if the file exists
-if [ -e "$LOG_FILE" ]; then
-    # Use awk to group by IP and HTTP status code, and display the data
-    awk '{ count[$1" "$9]++ } END { for (entry in count) print count[entry], entry }' "$LOG_FILE" | sort -nr
-else
-    echo "Error: $LOG_FILE does not exist."
-fi
+awk '{ print $1 " " $9}' apache-access.log | sort | uniq -c | sort -rn
