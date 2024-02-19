@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Bash script to display numbers from 1 to 20
-# Display different messages based on the loop iteration
 
 counter=1
 
