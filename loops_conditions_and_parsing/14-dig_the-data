@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Path to the log file
 LOG_FILE="/path/to/your/access.log"
 
